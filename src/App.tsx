@@ -25,18 +25,20 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
-            <Accordion titleValue={"Menu"}/>
-            <Accordion titleValue={"Users"}/>
+            <Accordion titleValue={"Menu"} collapsed={false}/>
+            <Accordion titleValue={"Users"} collapsed={true}/>
         </div>);
 }
 
-function PageTitle(props: any) {
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
     console.log("AppTitle rendering")
     return (
        <h1>{props.title}</h1>
     );
 }
-
-
 
 export default App;
