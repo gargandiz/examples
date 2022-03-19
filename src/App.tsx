@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Accordion from "./componets/Accordion/Accordion";
+import {Rating} from "./componets/Rating/Rating";
 
 /*function hello() {
     alert("Hello")
@@ -15,66 +17,26 @@ function App() {
     return (
         <div>
             {/*Hello*/}
-            <AppTitle />
-            <Rating />
-            <Accordion />
-            <Rating />
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"My friends"}/>
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
+            <Accordion titleValue={"Menu"}/>
+            <Accordion titleValue={"Users"}/>
         </div>);
 }
 
-function AppTitle() {
+function PageTitle(props: any) {
     console.log("AppTitle rendering")
     return (
-       <>This is APP component</>
+       <h1>{props.title}</h1>
     );
 }
 
-function Rating() {
-    console.log("Rating rendering")
-    return (
-        <div>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-        </div>
-    );
-}
 
-function Accordion() {
-    console.log("Accordion rendering")
-    return (
-        <div>
-            <AccordionTitle />
-            <AccordionBody />
-        </div>
-    );
-}
-
-function Star() {
-    console.log("Star rendering")
-    return (
-        <div>star</div>
-    );
-}
-
-function AccordionTitle() {
-    console.log("AccordionTitle rendering")
-    return (
-        <h3>Menu</h3>
-    );
-}
-
-function AccordionBody() {
-    console.log("AccordionBody rendering")
-    return (
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    );
-}
 
 export default App;
